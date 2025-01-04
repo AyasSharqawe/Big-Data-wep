@@ -32,15 +32,15 @@ The system consists of the following components:
       Processes tweets to extract metadata, analyze sentiment, and store in MongoDB.
 
   ** TwitterKafkaProducerApp
-      Reads tweets from a JSON file.
-      Publishes tweets to Kafka for downstream processing.
+     - Reads tweets from a JSON file.
+     - Publishes tweets to Kafka for downstream processing.
 
   ** MongoDBHandler
-      Handles MongoDB operations such as inserting tweets and creating indexes.
+    - Handles MongoDB operations such as inserting tweets and creating indexes.
   ** SentimentAnalyzer
-      Analyzes tweet sentiment using Stanford CoreNLP.
+    - Analyzes tweet sentiment using Stanford CoreNLP.
   ** HashtagExtractor
-      Extracts hashtags from tweet content using regex.
+    - Extracts hashtags from tweet content using regex.
 
 # Requirements
 - Scala 2.12+
@@ -59,16 +59,16 @@ The system consists of the following components:
    - Stanford CoreNLP
 2. Configure Kafka
    Start Kafka and create a topic named tweet-stream:
-     kafka-topics.sh --create --topic tweet-stream --bootstrap-server localhost:9092
+    - kafka-topics.sh --create --topic tweet-stream --bootstrap-server localhost:9092
 3. Configure MongoDB
-   Ensure MongoDB is running locally on mongodb://localhost:27017 and create a database named tweets_db.
+   - Ensure MongoDB is running locally on mongodb://localhost:27017 and create a database named tweets_db.
 4. Run the Producer Application
   1. Place your JSON file with geolocated tweets (boulder_flood_geolocated_tweets.json) in the project directory.
   2. Run the producer application to send tweets to Kafka:
-     sbt run
+    - sbt run
 5. Run the Consumer Application
-   Consume and process tweets from Kafka:
-    sbt run
+  - Consume and process tweets from Kafka:
+   -  sbt run
 # Contributors 
 Ayas Sharqawi 
 
